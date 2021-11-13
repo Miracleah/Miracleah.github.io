@@ -28,7 +28,7 @@
 <meta property="og:description" content="c语言函数递归的总结与运用。     在c语言的函数部分，递归是一块比较难掌握但是又很重要的一个部分。所以就来总结总结遇到的一些问题，以帮助更好的理解与运用递归。 在开始之前，还是先来看看递归的定义。什么是递归呢？简单来讲就是程序调用自身的编程技巧。递归作为一种算法在程序设计语言中广泛应用。一个过程或函数在其定义或说明中有直接或间接调用自身的一种方法，它通常把一个大型复杂的问题层层转化为一个与原问">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-11-13T14:13:17.682Z">
-<meta property="article:modified_time" content="2021-11-13T14:16:47.567Z">
+<meta property="article:modified_time" content="2021-11-13T14:23:56.742Z">
 <meta property="article:author" content="Miracle">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -94,7 +94,7 @@
 <p>在开始之前，还是先来看看递归的定义。什么是递归呢？简单来讲就是程序调用自身的编程技巧。递归作为一种算法在程序设计语言中广泛应用。一个过程或函数在其定义或说明中有直接或间接<strong>调用自身</strong>的一种方法，它通常把一个大型复杂的问题<strong>层层转化</strong>为一个与原问题相似的但<strong>规模较小</strong>的问题来求解，递归策略只需少量的程序就可以描述出解题过程所需要的多次重复计算，大大地减少了程序的代码量。递归的主要思考方式在于：<strong>大事化小，小事化了</strong>。</p>
 <p>下面通过一个个地例题，我们逐渐认识递归，并总结一些东西。</p>
 <p>1.接受一个整型值（无符号），按照顺序打印它的每一位。例如：输入1234，输出1 2 3 4.</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">void print(unsigned int n)</span><br><span class="line">&#123;</span><br><span class="line">    if(n&gt;9)</span><br><span class="line">    &#123;</span><br><span class="line">        print(n/10);</span><br><span class="line">    &#125;</span><br><span class="line">    printf(&quot;%d &quot;,n%10);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">(<span class="keyword">unsigned</span> <span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(n&gt;<span class="number">9</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        print(n/<span class="number">10</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>,n%<span class="number">10</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>通过一层层分析，我们可以了解到这个函数的运行情况。和比较简单的依次输出整数的每一位那一类题不一样，这个题你并不能确定输入的是几位数，但是这个函数就能很好的解决这个问题。就像剥洋葱一样，一层一层地弄开-解决，弄开-解决…….同时，我们也不难看出，函数中的选择语句非常重要，正是因为有了那个选择语句，这个递归才有尽头。否则，就是“死循环”。所以，在进行递归时，有两个必要条件：</p>
 <p><strong>一,   存在限制条件，当满足这个限制条件的时候。递归便不再继续。</strong></p>
