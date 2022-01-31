@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-11-13T14:27:02.566Z</updated>
+  <updated>2022-01-31T05:42:16.906Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,23 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>新年快乐</title>
+    <link href="http://example.com/2022/01/31/%E6%96%B0%E5%B9%B4%E5%BF%AB%E4%B9%90/"/>
+    <id>http://example.com/2022/01/31/%E6%96%B0%E5%B9%B4%E5%BF%AB%E4%B9%90/</id>
+    <published>2022-01-31T05:42:16.840Z</published>
+    <updated>2022-01-31T05:42:16.906Z</updated>
+    
+    <content type="html"><![CDATA[<p>又是新的一年了，祝大家新年快乐。</p><span id="more"></span><p>愿新年胜旧年，愿将来胜过往，我与旧事归于尽，来年依旧迎花开。</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;又是新的一年了，祝大家新年快乐。&lt;/p&gt;</summary>
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>函数的递归</title>
