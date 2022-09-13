@@ -27,10 +27,12 @@
 <meta property="og:site_name" content="Miracle">
 <meta property="og:description" content="数据结构中对顺序表的基本操作。">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/images/Data.png">
 <meta property="article:published_time" content="2022-09-13T15:01:37.626Z">
-<meta property="article:modified_time" content="2022-09-13T15:01:37.699Z">
+<meta property="article:modified_time" content="2022-09-13T15:08:14.272Z">
 <meta property="article:author" content="Miracle">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/images/Data.png">
   
   
 
@@ -224,7 +226,7 @@ mjx-container[display="true"] + br {
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">SeqListInit</span><span class="params">(SL* ps)</span> <span class="comment">//结构体指针</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line"></span><br><span class="line">	ps-&gt;a = <span class="literal">NULL</span>;</span><br><span class="line">	ps-&gt;size = ps-&gt;capacity = <span class="number">0</span>;  <span class="comment">//初始化数组</span></span><br><span class="line"></span><br><span class="line">}</span><br></pre></td></tr></table></figure>
 <h4 id="%E5%AE%9E%E7%8E%B0%E5%B0%BE%E6%8F%92%E5%87%BD%E6%95%B0%EF%BC%88%E5%85%B3%E9%94%AE%EF%BC%89" tabindex="-1">实现尾插函数（关键）</h4>
 <p>怎样实现对数组长度的动态分配呢？这对于我来说却是是一个不简单的问题，这个问题让我难以下手。高中的时候，遇到无从下手的题，我一般用特殊值，或者临界状态去试着打开突破口。所以，解决这个问题不妨从临界状态开始分析：</p>
-<p>![](D:\test\Hexo\source_photos\A82EA21A-34D5-4DAB-AE0E-EC5402A11A12(20220913-225.PNG)</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="/images/Data.png" alt=""></p>
 <p>从图中可以看出，有两种情况需要对数组进行扩容：</p>
 <p>1、需要插入元素，但数组是空的（没有空间）。</p>
 <p>2、需要插入元素，但是数组已经满了，也就是数组元素的个数等于数组的容量了。</p>
